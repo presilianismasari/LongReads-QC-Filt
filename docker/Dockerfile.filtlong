@@ -1,0 +1,26 @@
+FROM mambaorg/micromamba:2.4.0-debian12
+
+# 1. root for install system package
+USER root
+
+# 2. Install tools for nextflow
+RUN apt-get update && \
+    apt-get install -y procps && \
+    rm -rf /var/lib/apt/lists/*
+
+# 3. Working directory
+WORKDIR /app
+
+# 4. Copy environment file
+COPY env/filtlong.yml /tmp/filtlong.yml
+
+
+# 5. Create conda environment
+RUN micromamba create -n filtlong -f /tmp/filtlong.yml && \
+    micromamba clean --all --yes
+
+# 6. Activate environment by default
+ENV PATH=/opt/conda/envs/filtlong/bin:$PATH
+
+# 7. Kembali ke user non-root (best practice)
+USER $MAMBA_USER
