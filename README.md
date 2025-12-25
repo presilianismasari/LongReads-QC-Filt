@@ -1,4 +1,4 @@
-# 🧬 LongReads QC
+# 🧬 LongReads QC and Filtering
 
 This repository provides a Nextflow pipeline for quality control and assembly of long-read sequencing data using **Filtlong** and **NanoPlot**. It includes Dockerfiles for reproducible execution, so users do not need to install the tools manually.
 
