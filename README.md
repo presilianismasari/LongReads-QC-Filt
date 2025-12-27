@@ -5,9 +5,7 @@ This repository provides a Nextflow pipeline for quality control and assembly of
 ---
 ## Requirements
 - [Nextflow](https://www.nextflow.io/)
-- [Docker](https://www.docker.com/) (for containerized execution)
-
-> **Note:** You do not need to install Filtlong or NanoPlot manually; the pipeline uses the Docker containers provided in this repo.
+- [Docker](https://www.docker.com/)
 
 ---
 ## 🐳 Docker Setup
@@ -25,6 +23,6 @@ nextflow run main.nf --filtlong_target_bases 5000000
 ```
 
 Pipeline Parameters
---filtlong_target_bases : Target bases for Filtlong filtering (adjust as needed)
---filtlong_keep_percentage : Percentage of reads to keep (default: 90)
---filtlong_min_length : Minimum read length for filtering (default: 1000)
+- filtlong_target_bases : Target bases for Filtlong filtering (adjust as needed)
+- filtlong_keep_percentage : Percentage of reads to keep (default: 90)
+- filtlong_min_length : Minimum read length for filtering (default: 1000)
