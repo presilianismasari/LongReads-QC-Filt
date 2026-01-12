@@ -3,6 +3,7 @@ process FILTLONG {
     tag "${reads.simpleName}"
 
     container 'filtlong:latest'
+    publishDir "results/filtlong", mode: 'copy'
 
     input:
     path reads

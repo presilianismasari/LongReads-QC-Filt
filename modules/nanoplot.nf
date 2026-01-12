@@ -1,6 +1,6 @@
 process NANOPLOT_QC {
 
-     tag "${stage}:${reads.simpleName}"
+    tag "${stage}:${reads.simpleName}"
 
     container 'nanoplot:latest'
     publishDir "results/nanoplot/${stage}", mode: 'copy'
